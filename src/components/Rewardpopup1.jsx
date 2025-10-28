@@ -4,7 +4,7 @@
   import { X } from "lucide-react";
   import OpenReward from "./OpenReward";
   import { useNavigate } from "react-router-dom";
-  const API_BASE_URL = import.meta.env.VITE_API_URL;
+  const VITE_API_URL = import.meta.env.VITE_API_URL;
 
   const Rewardpopup1 = ({ onClose, scannedData }) => {
     const [showOpenReward, setShowOpenReward] = useState(false);
@@ -21,7 +21,7 @@
       try {
         setLoading(true);
         const userId = localStorage.getItem("userId");
-        const res = await fetch(`${API_BASE_URL}/api/scan`, {
+        const res = await fetch(`${VITE_API_URL}/api/scan`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ userId, code: scannedData })
