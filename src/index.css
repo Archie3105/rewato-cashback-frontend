@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+#rgb-text, h2 {
+    color: red,
+}
