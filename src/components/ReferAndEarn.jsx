@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // if not imported
 import { Home } from "lucide-react"; // optional: using lucide icon
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 const ReferAndEarn = () => {
   const navigate = useNavigate()
@@ -13,7 +13,7 @@ const ReferAndEarn = () => {
     try {
       const userId = localStorage.getItem("userId");
       if (!userId) return setTotalEarned(0);
-      const res = await fetch(`${API_BASE_URL}/api/users/${userId}`);
+      const res = await fetch(`${VITE_API_URL}/api/users/${userId}`);
       if (!res.ok) return setTotalEarned(0);
       const data = await res.json();
       setTotalEarned(data.cashbackAmount || 0);
