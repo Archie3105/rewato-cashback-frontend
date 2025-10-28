@@ -6,7 +6,7 @@ const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 const ReferAndEarn = () => {
   const navigate = useNavigate()
-  const shareLink = "https://rewato-cashback.netlify.app/";
+  const shareLink = "https://rewato-cashback-frontend.vercel.app/";
   const [totalEarned, setTotalEarned] = useState(0);
 
   const fetchUser = async () => {
